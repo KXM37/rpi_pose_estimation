@@ -25,7 +25,8 @@ import time
 import math
 import pathlib
 from threading import Thread
-import importlib.util
+import importlib.util 
+from importlib.util import VideoStream
 import datetime
 
 import time
@@ -34,7 +35,7 @@ import time
 
 # Define VideoStream class to handle streaming of video from webcam in separate processing thread
 # Source - Adrian Rosebrock, PyImageSearch: https://www.pyimagesearch.com/2015/12/28/increasing-raspberry-pi-fps-with-python-and-opencv/
-class VideoStream:
+class Video_Stream:
     """Camera object that controls video streaming from the Picamera"""
     def __init__(self,resolution=(640,480),framerate=30):
         # Initialize the PiCamera and the camera image stream
@@ -218,6 +219,10 @@ def draw_lines(keypoints, image, bad_pts):
 
 #flag for debugging
 debug = True 
+
+# Initialize frame rate calculation
+frame_rate_calc = 1
+freq = cv2.getTickFrequency()
 
 try:
     print("Program started - waiting for Enter to be pressed...")
