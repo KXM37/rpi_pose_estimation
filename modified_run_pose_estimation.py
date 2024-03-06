@@ -247,12 +247,6 @@ try:
             frame1 = videostream.read()
             # Acquire frame and resize to expected shape [1xHxWx3]
             frame = frame1.copy()
-            if frame1 is not None:
-    frame = frame1.copy()
-    # Proceed with your processing
-else:
-    print("Failed to capture frame")
-    continue  # Skip this iteration of the loop and try again
 
             frame_rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
             frame_resized = cv2.resize(frame_rgb, (width, height))
