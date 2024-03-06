@@ -65,12 +65,7 @@ class VideoStream:
 
     def update(self):
         # Keep looping indefinitely until the thread is stopped
-        try:
-    while True:
-        cmd = input("Press Enter to start/stop capture (type 'quit' to exit): ")
-        if cmd.lower() == 'quit':
-            break
-        print("Starting or stopping capture based on user input.")
+        while True:
             # If the camera is stopped, stop the thread
             if self.stopped:
                 # Close camera resources
@@ -232,12 +227,11 @@ debug = True
 
 try:
     print("Progam started - waiting for button push...")
-    try:
     while True:
-        cmd = input("Press Enter to start/stop capture (type 'quit' to exit): ")
+        cmd = input("Press Enter to start/stop capture(type 'quit' to exit):")
         if cmd.lower() == 'quit':
             break
-        print("Starting or stopping capture based on user input.")
+        print("Starting or stopping based on user input.")
     #if True:
         #make sure LED is off and wait for button press
         if not led_on and  not GPIO.input(17):
@@ -257,12 +251,7 @@ try:
             time.sleep(1)
 
             #for frame1 in camera.capture_continuous(rawCapture, format="bgr",use_video_port=True):
-            try:
-    while True:
-        cmd = input("Press Enter to start/stop capture (type 'quit' to exit): ")
-        if cmd.lower() == 'quit':
-            break
-        print("Starting or stopping capture based on user input.")
+            while True:
                 print('running loop')
                 # Start timer (for calculating frame rate)
                 t1 = cv2.getTickCount()
