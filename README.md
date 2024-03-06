@@ -1,3 +1,20 @@
+
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+Program started - waiting for Enter to be pressed...
+Press Enter to start/stop capture (type 'quit' to exit): 
+Starting capture based on user input.
+[ WARN:0@2.732] global cap_v4l.cpp:997 open VIDEOIO(V4L2:/dev/video0): can't open camera by index
+[ERROR:0@2.735] global obsensor_uvc_stream_channel.cpp:159 getStreamChannelGroup Camera index out of range
+Camera initiated.
+Running loop
+Traceback (most recent call last):
+  File "/home/Team4/rpi_pose_estimation/run_pose_estimation.py", line 246, in <module>
+    frame = frame1.copy()
+            ^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'copy'
+
+
+
 # **Pose Estimation on the Raspberry Pi 4**
 
 Results
